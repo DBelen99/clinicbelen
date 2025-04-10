@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tree_clinicbelen_professional">
+            <field name="name">Árbol de Profesionales</field>
+            <field name="model">clinicbelen.professional</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="surnames" />
+                    <field name="proftype" />
+                    <field name="email" />
+                    <field name="phone" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_clinicbelen_professional">
+            <field name="name">Formulario de Profesionales</field>
+            <field name="model">clinicbelen.professional</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <group>
+                        <field name="id" />
+                        <field name="name" />
+                        <field name="surnames" />
+                        <field name="proftype" />
+                        <field name="email" />
+                        <field name="treatments" />
+                        <field name="phone" />
+                    </group>
+                    <notebook>
+                        <page string="Sesiones">
+                            <field name="sessions" readonly="1">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="date" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_clinicbelen_professionals">
+            <field name="name">Profesionales</field>
+            <field name="res_model">clinicbelen.professional</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+    <menuitem name="Clínica" id="clinicbelen_menu_root" />
+    <menuitem name="Profesionales" id="clinicbelen_menu_professional" parent="clinicbelen_menu_root"
+        action="action_clinicbelen_professionals" />
+</odoo>

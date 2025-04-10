@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tree_clinicbelen_register">
+            <field name="name">Árbol de Registros</field>
+            <field name="model">clinicbelen.register</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="client" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_clinicbelen_register">
+            <field name="name">Formulario de Registros</field>
+            <field name="model">clinicbelen.register</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="id" />
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="client" />
+                            <field name="treatments"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_clinicbelen_registers">
+            <field name="name">Registros</field>
+            <field name="res_model">clinicbelen.register</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+    <menuitem name="Clínica" id="clinicbelen_menu_root" />
+    <menuitem name="Registros" id="clinicbelen_menu_register" parent="clinicbelen_menu_root"
+        action="action_clinicbelen_registers" />
+</odoo>

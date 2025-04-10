@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tree_clinicbelen_technique">
+            <field name="name">Árbol de Técnicas</field>
+            <field name="model">clinicbelen.technique</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="description" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_clinicbelen_technique">
+            <field name="name">Formulario de Técnicas</field>
+            <field name="model">clinicbelen.technique</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="id" />
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="sessions"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_clinicbelen_techniques">
+            <field name="name">Técnicas</field>
+            <field name="res_model">clinicbelen.technique</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+    <menuitem name="Clínica" id="clinicbelen_menu_root" />
+    <menuitem name="Técnicas" id="clinicbelen_menu_technique" parent="clinicbelen_menu_root"
+        action="action_clinicbelen_techniques" />
+</odoo>

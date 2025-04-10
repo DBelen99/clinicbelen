@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tree_clinicbelen_client">
+            <field name="name">Árbol de Clientes</field>
+            <field name="model">clinicbelen.client</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="surname" />
+                    <field name="birthdate" />
+                    <field name="phone" />
+                    <field name="email" />
+                    <field name="direction" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_clinicbelen_client">
+            <field name="name">Formulario de Clientes</field>
+            <field name="model">clinicbelen.client</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="id" />
+                            <field name="name" />
+                            <field name="surname" />
+                            <field name="birthdate" />
+                            <field name="phone" />
+                            <field name="email" />
+                            <field name="direction" />
+                            <field name="registers" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_clinicbelen_clients">
+            <field name="name">Clientes</field>
+            <field name="res_model">clinicbelen.client</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+    <menuitem name="Clínica" id="clinicbelen_menu_root" />
+    <menuitem name="Clientes" id="clinicbelen_menu_client" parent="clinicbelen_menu_root"
+        action="action_clinicbelen_clients" />
+
+</odoo>

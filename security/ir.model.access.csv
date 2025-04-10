@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_clinicbelen_session,clinicbelen.session,model_clinicbelen_session,base.group_user,1,1,1,1
+access_clinicbelen_technique,clinicbelen.technique,model_clinicbelen_technique,base.group_user,1,1,1,1
+access_clinicbelen_register,clinicbelen.register,model_clinicbelen_register,base.group_user,1,1,1,1
+access_clinicbelen_treatment,clinicbelen.treatment,model_clinicbelen_treatment,base.group_user,1,1,1,1
+access_clinicbelen_client,clinicbelen.client,model_clinicbelen_client,base.group_user,1,1,1,1
+access_clinicbelen_professional,clinicbelen.professional,model_clinicbelen_professional,base.group_user,1,1,1,1
+access_clinicbelen_patient,clinicbelen.patient,model_clinicbelen_patient,base.group_user,1,1,1,1

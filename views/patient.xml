@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+        <!-- Definición de la vista de árbol para pacientes -->
+        <record model="ir.ui.view" id="tree_clinicbelen_patient">
+            <field name="name">Árbol de Pacientes</field>
+            <field name="model">clinicbelen.patient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Campos que se mostrarán en la vista de árbol -->
+                    <field name="name" />
+                    <field name="surname" />
+                    <field name="birthdate" />
+                    <field name="phone" />
+                    <field name="email" />
+                    <field name="direction" />
+                    <field name="medical_history" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Definición de la vista de formulario para pacientes -->
+        <record model="ir.ui.view" id="form_clinicbelen_patient">
+            <field name="name">Formulario de Pacientes</field>
+            <field name="model">clinicbelen.patient</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <!-- Grupo de campos para ingresar la información del paciente -->
+                        <group>
+                            <field name="id" />
+                            <field name="name" />
+                            <field name="surname" />
+                            <field name="birthdate" />
+                            <field name="phone" />
+                            <field name="email" />
+                            <field name="direction" />
+                            <field name="medical_history" />
+                        </group>
+
+                        <!-- Notebook con páginas para mostrar los tratamientos del paciente -->
+                        <notebook>
+                            <!-- Página para mostrar los tratamientos del paciente -->
+                            <page string="Tratamientos">
+                                <field name="treatments" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Definición de la acción para abrir la vista de pacientes -->
+        <record model="ir.actions.act_window" id="action_clinicbelen_patients">
+            <field name="name">Pacientes</field>
+            <field name="res_model">clinicbelen.patient</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+       
+    <menuitem name="Clínica" id="clinicbelen_menu_root" />
+    <menuitem name="Pacientes" id="clinicbelen_menu_patient" parent="clinicbelen_menu_root"
+        action="action_clinicbelen_patients" />
+   
+</odoo>
